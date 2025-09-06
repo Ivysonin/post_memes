@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meme {{ meme.id }}</title>
+    <link rel="stylesheet" href=" {{ url_for('static', filename='meme_detalhes.css') }} ">
+</head>
+<body>
+    <h2>Meme de {{ meme.author.nome }}</h2>
+    <img src="{{ url_for('static', filename=meme.image_url) }}" alt="meme" width="400">
+    <p>Postado em {{ meme.data_criacao.strftime('%d/%m/%Y %H:%M') }}</p>
+
+    <hr>
+
+    <!-- Formulário de comentário -->
+    <form action="{{ url_for('comentario.post_comentario', meme_id=meme.id) }}" method="POST">
+        <input type="text" name="username" placeholder="Seu nome" required>
+        <textarea name="content" placeholder="Escreva um comentário..." required></textarea>
+        <button type="submit">Comentar</button>
+    </form>
+
+    <hr>
+
+    <!-- Comentários -->
+    <h3>Comentários</h3>
+    {% for comentario in meme.comentario %}
+        <div>
+            <p><b>{{ comentario.author.nome }}</b> disse:</p>
+            <p>{{ comentario.conteudo }}</p>
+            <small>{{ comentario.data_criacao.strftime('%d/%m/%Y %H:%M') }}</small>
+        </div>
+        <hr>
+    {% else %}
+        <p>Sem comentários ainda.</p>
+    {% endfor %}
+
+    <a href="{{ url_for('meme.index') }}">⬅ Voltar</a>
+</body>
+</html>
