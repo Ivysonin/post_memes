@@ -92,14 +92,6 @@ Durante o desenvolvimento do Post Memes, os principais focos foram:
 
 <img width="1082" height="507" alt="Captura de tela de 2025-09-06 19-55-29" src="https://github.com/user-attachments/assets/29cbbae8-c2b9-40b0-87d5-6089bdde3434" />
 
-
-## 🌐 Projeto Online
-
-Acesse o sistema em: https://post-memes-c3gb.onrender.com
-> ⚠️ Aviso: Este projeto está hospedado no Render (plano gratuito). Após 15 minutos de inatividade, o serviço pode ser temporariamente suspenso e levar alguns segundos para voltar ao ar.
-
-> ⚠️ Aviso: Este projeto não utiliza armazenamento em nuvem, portanto as imagens são salvas localmente e permanecem temporariamente disponíveis no site.
-
 ## 📄 Licença
 
 Este projeto está licenciado sob os termos da [Licença MIT](./LICENSE), com cláusula adicional de atribuição.
